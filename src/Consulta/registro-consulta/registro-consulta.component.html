@@ -1,1 +1,12 @@
 <p>registro-consulta works!</p>
+
+<form (ngSubmit)="Registro()" [formGroup]="Consulta">
+<label for="">Cliente</label>
+<input type="text" formControlName="Cliente">
+<label for="">Doctor</label>
+<input type="text" formControlName="Doctor">
+<label for="">Diagnositco</label>
+<input type="text" formControlName="Diagnositco">
+<label for="">Medicina</label>
+<input type="text" formControlName="Medicina">
+</form>
