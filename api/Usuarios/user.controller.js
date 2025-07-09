@@ -1,4 +1,4 @@
-const{create,getUserByUserEmail} = require("../Usuarios/user.service")
+const{create,getUserByUserEmail,getuserbyID} = require("../Usuarios/user.service")
 
 const {hashSync,genSaltSync,compareSync} = require("bcrypt");
 const {sign} = require("jsonwebtoken");
@@ -48,6 +48,22 @@ module.exports = {
                     message: "invalid email or password"
                 });
             }
+        });
+
+    },
+    getuserbyid:(req,res)=>{
+        const id = req.params.id;
+        getuserbyID(id,(err, results)=>{
+            if(err){
+                console.log(err);
+            }if(!results){
+                return res.json({
+                  message:"usuario no encontrado"  
+                });   
+            }
+            return res.json({
+                data:results
+            })
         });
 
     }
