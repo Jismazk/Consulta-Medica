@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   standalone: true,
   templateUrl: './registro-consulta.component.html',
   styleUrls: ['./registro-consulta.component.css'],
-  imports: [ReactiveFormsModule] // ← IMPORTANTE: Aquí se soluciona el error
+  imports: [ReactiveFormsModule] 
 })
 export class RegistroConsultaComponent {
   Consulta: FormGroup;
