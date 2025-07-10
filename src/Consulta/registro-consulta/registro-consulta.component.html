@@ -1,12 +1,30 @@
-<p>registro-consulta works!</p>
+<div class="container mt-5">
+  <h3 class="text-primary mb-4">Registro de Consulta Médica</h3>
 
-<form (ngSubmit)="Registro()" [formGroup]="Consulta">
-<label for="">Cliente</label>
-<input type="text" formControlName="Cliente">
-<label for="">Doctor</label>
-<input type="text" formControlName="Doctor">
-<label for="">Diagnositco</label>
-<input type="text" formControlName="Diagnositco">
-<label for="">Medicina</label>
-<input type="text" formControlName="Medicina">
-</form>
+  <div class="card shadow p-4">
+    <form (ngSubmit)="Registro()" [formGroup]="Consulta">
+      
+      <div class="mb-3">
+        <label for="cliente" class="form-label fw-bold">Cliente</label>
+        <input type="text" id="cliente" class="form-control" formControlName="Cliente" placeholder="Nombre del cliente">
+      </div>
+
+      <div class="mb-3">
+        <label for="doctor" class="form-label fw-bold">Doctor</label>
+        <input type="text" id="doctor" class="form-control" formControlName="Doctor" placeholder="Nombre del doctor">
+      </div>
+
+      <div class="mb-3">
+        <label for="diagnostico" class="form-label fw-bold">Diagnóstico</label>
+        <textarea id="diagnostico" class="form-control" formControlName="Diagnositco" rows="3" placeholder="Escribe el diagnóstico completo..."></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="medicina" class="form-label fw-bold">Medicina</label>
+        <input type="text" id="medicina" class="form-control" formControlName="Medicina" placeholder="Medicamento recetado">
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Registrar Consulta</button>
+    </form>
+  </div>
+</div>
