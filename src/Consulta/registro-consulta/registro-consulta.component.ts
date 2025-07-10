@@ -8,12 +8,13 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './registro-consulta.component.scss'
 })
 export class RegistroConsultaComponent {
-Consulta = new FormGroup({
+  
+Consulta:FormGroup = new FormGroup({
   cliente : new FormControl(''),
   Doctor: new FormControl(''),
-  Diagnositico : new FormControl(''),
+  Diagnostico: new FormControl(''),
   medicina: new FormControl('')
-})
+});
 
 Registro(){
   

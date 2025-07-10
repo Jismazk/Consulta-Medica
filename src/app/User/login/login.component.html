@@ -1,0 +1,15 @@
+<p>login works!</p>
+
+<div>
+<form (ngSubmit)="log()" [formGroup]="user">
+    <label for="">Email</label>
+    <input type="text" formControlName="email"><br>
+    <label for="">Contraseña</label>
+    <input type="password" formControlName="pass"><br>
+    <button type="submit">Iniciar sesion</button>
+</form>
+
+   <label routerLink="reg" >Registro</label> 
+
+
+</div>
