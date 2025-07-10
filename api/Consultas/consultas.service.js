@@ -10,8 +10,9 @@ module.exports={
                 if(err){
                     return callBack(err);
                 }
-                return callBack(null,results[0]);
+                return callBack(null,results);
             }
         )
-    }
+    },
+
 };

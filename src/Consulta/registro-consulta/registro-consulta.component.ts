@@ -11,7 +11,20 @@ import { Router } from '@angular/router';
   imports: [ReactiveFormsModule] 
 })
 export class RegistroConsultaComponent {
-  Consulta: FormGroup;
+
+  
+Consulta:FormGroup = new FormGroup({
+  cliente : new FormControl(''),
+  Doctor: new FormControl(''),
+  Diagnostico: new FormControl(''),
+  medicina: new FormControl('')
+});
+
+Registro(){
+  
+}
+
+
 
   constructor(
     private fb: FormBuilder,
