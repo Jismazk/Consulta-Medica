@@ -1,0 +1,14 @@
+.nav-link.active {
+  background-color: #ffc107 !important;
+  color: black !important;
+}
+
+.nav-link:hover:not(.active) {
+  background-color: #0d6efdcc;
+  color: white !important;
+}
+
+.nav-link.disabled {
+  pointer-events: none;
+  opacity: 0.9;
+}

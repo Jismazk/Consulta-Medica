@@ -1,0 +1,82 @@
+<div class="form-container">
+  <form (ngSubmit)="regi()" [formGroup]="newuser" class="form-box">
+    <h2>Crear cuenta</h2>
+
+    <label>Email</label>
+    <input type="email" formControlName="email" />
+
+    <label>Contraseña</label>
+    <input type="password" formControlName="pass" />
+
+    <label>Nombre</label>
+    <input type="text" formControlName="nombre" />
+
+    <label>Apellido</label>
+    <input type="text" formControlName="apellido" />
+
+    <button type="submit">Registrar</button>
+  </form>
+</div>
+
+<style>
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+  }
+
+  .form-box {
+    background-color: white;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .form-box h2 {
+    margin-bottom: 1.5rem;
+    color: #007bff;
+    text-align: center;
+  }
+
+  .form-box label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .form-box input {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  .form-box input:focus {
+    border-color: #007bff;
+  }
+
+  .form-box button {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.7rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .form-box button:hover {
+    background-color: #0056b3;
+  }
+</style>

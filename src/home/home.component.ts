@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BarraComponent } from '../barra/barra.component';
+
 
 @Component({
   selector: 'app-home',

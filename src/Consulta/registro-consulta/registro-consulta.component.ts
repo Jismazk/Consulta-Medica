@@ -11,7 +11,12 @@ import { Router } from '@angular/router';
   imports: [ReactiveFormsModule] 
 })
 export class RegistroConsultaComponent {
-  Consulta: FormGroup;
+
+  
+Consulta:FormGroup;
+
+
+
 
   constructor(
     private fb: FormBuilder,

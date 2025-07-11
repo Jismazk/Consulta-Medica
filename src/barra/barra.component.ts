@@ -1,55 +1,30 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Component, effect, signal } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-barra',
   standalone: true,
-  imports: [RouterModule],
-  template: `
-    <nav class="nav nav-pills mb-3 bg-primary rounded p-2">
-      <a
-        class="nav-link text-white"
-        routerLink="/"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-      >
-        Inicio
-      </a>
-      <a
-        class="nav-link text-white"
-        routerLink="/prueba"
-        routerLinkActive="active"
-      >
-        Registro Consulta
-      </a>
-      <a
-        class="nav-link text-white"
-        routerLink="/tabla-consulta"
-        routerLinkActive="active"
-      >
-        Tabla Consulta
-      </a>
-      <a
-        class="nav-link text-white"
-        routerLink="/iniciar-sesion"
-        routerLinkActive="active"
-      >
-        Iniciar Sesión
-      </a>
-    </nav>
-  `,
-  styles: [
-    `
-      .nav-pills .nav-link.active {
-        background-color: #ffc107;
-        color: #000 !important;
-      }
-      .nav-pills .nav-link:hover:not(.active) {
-        background-color: #0d6efdcc;
-        color: white !important;
-      }
-    `,
-  ],
+  imports: [CommonModule,RouterModule],
+  templateUrl: './barra.component.html',
+  styleUrls: ['./barra.component.css']
 })
-export class BarraComponent {}
+export class BarraComponent {
+  isLoggedIn = signal(false);
+  userName = signal('');
+
+  constructor(private router: Router) {
+    effect(() => {
+      const token = localStorage.getItem('token');
+      const nombre = localStorage.getItem('nombre');
+      this.isLoggedIn.set(!!token);
+      this.userName.set(nombre || '');
+    });
+  }
+
+  cerrarSesion() {
+    localStorage.clear();
+    this.router.navigate(['/iniciar-sesion']);
+  }
+}
 

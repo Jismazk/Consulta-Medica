@@ -4,13 +4,12 @@ require("dotenv").config();
 module.exports = {
     create: (data,callBack) => {
         pool.query(
-            'insert into users(email,pass,nombre,apellido,rol) values(?,?,?,?,?)',
+            'insert into users(email,pass,nombre,apellido) values(?,?,?,?)',
             [
                 data.email,
                 data.pass,
                 data.nombre,
-                data.apellido,
-                data.rol
+                data.apellido
             ],
             (error,results,fields) => {
                 if(error){
