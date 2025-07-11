@@ -1,14 +1,15 @@
+// src/app/app.component.ts
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
-import { RegistroConsultaComponent } from '../Consulta/registro-consulta/registro-consulta.component';
-
+import { RouterOutlet } from '@angular/router';
+import { BarraComponent } from '../barra/barra.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,RouterLink],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  standalone: true,
+  imports: [RouterOutlet, BarraComponent],
+  template: `
+  <app-barra></app-barra>
+  <router-outlet></router-outlet>`,
 })
-export class AppComponent {
-  title = 'Consulta-Medica';
-}
+export class AppComponent {}
+
