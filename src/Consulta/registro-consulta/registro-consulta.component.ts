@@ -13,16 +13,8 @@ import { Router } from '@angular/router';
 export class RegistroConsultaComponent {
 
   
-Consulta:FormGroup = new FormGroup({
-  cliente : new FormControl(''),
-  Doctor: new FormControl(''),
-  Diagnostico: new FormControl(''),
-  medicina: new FormControl('')
-});
+Consulta:FormGroup;
 
-Registro(){
-  
-}
 
 
 
